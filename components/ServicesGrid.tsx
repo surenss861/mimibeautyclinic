@@ -13,7 +13,7 @@ const serviceGroups = [
     services: [
       {
         title: "Anti-Wrinkle Injections",
-        subtitle: "Botox & Dysport",
+        subtitle: "Botox® & Dysport®",
         tagline: "Smooth lines. Natural results.",
         description: "The secret? Precision. We don&apos;t freeze faces—we soften expressions. Our injectors read your face like a map, placing each unit exactly where it needs to be. The result? You look like you, just well-rested.",
         price: "Starting at $110",
@@ -25,7 +25,7 @@ const serviceGroups = [
       },
       {
         title: "Dermal Fillers",
-        subtitle: "Juvéderm & Restylane",
+        subtitle: "Juvéderm® & Restylane®",
         tagline: "Restore volume. Enhance features.",
         description: "Think of fillers as your face&apos;s best-kept secret. We restore what time has gently taken away, enhancing your natural architecture with an artist&apos;s eye. Every placement is intentional, every result is you—just elevated.",
         price: "Custom pricing",
@@ -142,7 +142,7 @@ function ServiceCard({ service, idx, groupIdx }: { service: any; idx: number; gr
           viewport={{ once: true }}
           transition={{ delay: (groupIdx * 0.2) + (idx * 0.15) + 0.1, duration: 0.8 }}
         >
-          <span className="text-xs font-medium text-stone-500 uppercase tracking-wider block mb-3">
+          <span className="text-xs font-medium text-stone-500 tracking-wider block mb-3">
             {service.subtitle}
           </span>
           <h3 className="text-3xl sm:text-4xl md:text-5xl font-light font-serif text-stone-900 mb-4 leading-tight">
