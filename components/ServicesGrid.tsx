@@ -15,23 +15,25 @@ const serviceGroups = [
         title: "Anti-Wrinkle Injections",
         subtitle: "Botox & Dysport",
         tagline: "Smooth lines. Natural results.",
-        description: "Precision injectables that soften fine lines and wrinkles without the frozen look.",
+        description: "The secret? Precision. We don&apos;t freeze faces—we soften expressions. Our injectors read your face like a map, placing each unit exactly where it needs to be. The result? You look like you, just well-rested.",
         price: "Starting at $110",
         duration: "15-min treatment",
         href: "/services/botox",
         image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=80",
-        testimonial: "Botox made me look refreshed, not frozen – Dana",
+        testimonial: "I feel 10 years younger, and no one can tell I&apos;ve had anything done. That&apos;s the magic. – Dana",
+        benefit: "Look refreshed, not frozen",
       },
       {
         title: "Dermal Fillers",
         subtitle: "Juvéderm & Restylane",
         tagline: "Restore volume. Enhance features.",
-        description: "Expertly placed fillers that restore lost volume and enhance your natural features with subtlety and artistry.",
+        description: "Think of fillers as your face&apos;s best-kept secret. We restore what time has gently taken away, enhancing your natural architecture with an artist&apos;s eye. Every placement is intentional, every result is you—just elevated.",
         price: "Custom pricing",
         duration: "30-min treatment",
         href: "/services/fillers",
         image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80",
-        testimonial: "My lips look so natural, everyone thinks I was born with them – Sarah",
+        testimonial: "My lips look so natural, everyone thinks I was born with them. That&apos;s exactly what I wanted. – Sarah",
+        benefit: "Natural enhancement, zero tell",
       },
     ],
   },
@@ -43,23 +45,25 @@ const serviceGroups = [
         title: "Morpheus8",
         subtitle: "RF Microneedling",
         tagline: "Tighten skin. Transform texture.",
-        description: "Advanced radiofrequency microneedling that tightens skin and improves texture from the inside out.",
+        description: "This is where science meets art. Morpheus8 doesn&apos;t just treat the surface—it rebuilds from within. Radiofrequency energy meets precision needles to trigger your skin&apos;s natural healing response. The result? Skin that feels firmer, looks smoother, and glows with confidence.",
         price: "From $599",
         duration: "60-min treatment",
         href: "/services/morpheus8",
         image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&q=80",
-        testimonial: "Morpheus8 made my skin feel 10 yrs younger – Dana",
+        testimonial: "My skin feels 10 years younger. People keep asking what I&apos;m doing differently. – Dana",
+        benefit: "Firmer, smoother, glowing skin",
       },
       {
         title: "PRP & Microneedling",
         subtitle: "Collagen Induction",
         tagline: "Stimulate. Rejuvenate. Glow.",
-        description: "Stimulate natural collagen production for radiant, youthful skin.",
+        description: "Your body already knows how to heal. We just give it a nudge. Using your own platelet-rich plasma, we stimulate your skin&apos;s natural collagen production. It&apos;s like hitting the reset button on your complexion—radiant, refreshed, and unmistakably yours.",
         price: "From $299",
         duration: "45-min treatment",
         href: "/services/microneedling",
         image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800&q=80",
-        testimonial: "My skin has never looked this good – Maria",
+        testimonial: "My skin has never looked this good. It&apos;s like I&apos;ve found my glow again. – Maria",
+        benefit: "Your body&apos;s natural healing, amplified",
       },
     ],
   },
@@ -103,9 +107,11 @@ function ServiceCard({ service, idx, groupIdx }: { service: any; idx: number; gr
               >
                 <Image
                   src={service.image}
-                  alt={service.title}
+                  alt={`${service.title} treatment at Mimi Beauty Clinics - ${service.tagline}`}
                   fill
                   className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
+                  loading="lazy"
                 />
               </motion.div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/40 transition-all duration-500" />
@@ -155,21 +161,42 @@ function ServiceCard({ service, idx, groupIdx }: { service: any; idx: number; gr
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: (groupIdx * 0.2) + (idx * 0.15) + 0.4, duration: 0.6 }}
-            className="bg-gradient-to-br from-primary-50/50 to-rose-50/30 rounded-xl p-4 mb-8 border-l-4 border-primary-400"
+            className="bg-gradient-to-br from-primary-50/50 to-rose-50/30 rounded-xl p-5 mb-6 border-l-4 border-primary-400 relative overflow-hidden"
           >
-            <p className="text-sm text-stone-700 italic">
+            <div className="absolute top-0 right-0 w-16 h-16 bg-primary-200/20 rounded-full blur-2xl -mr-8 -mt-8"></div>
+            <p className="text-sm sm:text-base text-stone-700 italic relative z-10 leading-relaxed">
               &ldquo;{service.testimonial}&rdquo;
             </p>
           </motion.div>
+          
+          {/* Benefit Badge */}
+          {service.benefit && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: (groupIdx * 0.2) + (idx * 0.15) + 0.5, duration: 0.5 }}
+              className="inline-flex items-center gap-2 bg-primary-600/10 text-primary-700 px-4 py-2 rounded-full text-xs sm:text-sm font-medium mb-6"
+            >
+              <span className="w-1.5 h-1.5 bg-primary-600 rounded-full"></span>
+              {service.benefit}
+            </motion.div>
+          )}
 
           {/* CTA */}
           <Link href={service.href} className="inline-block min-h-[44px] min-w-[44px] touch-manipulation">
             <motion.div
               whileHover={{ x: 4 }}
-              className="inline-flex items-center gap-2 text-stone-900 font-medium group py-2"
+              className="inline-flex items-center gap-2 text-stone-900 font-medium group py-2 relative"
             >
               <span>Learn More</span>
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              <ArrowRight size={18} className="arrow-slide" />
+              {/* Subtle underline on hover */}
+              <motion.div
+                initial={{ width: 0 }}
+                whileHover={{ width: "100%" }}
+                className="absolute bottom-0 left-0 h-px bg-gradient-to-r from-primary-400 to-rose-400"
+              />
             </motion.div>
           </Link>
         </motion.div>
@@ -205,11 +232,20 @@ export function ServicesGrid() {
           transition={{ duration: 0.8 }}
           className="mb-12 md:mb-20"
         >
-          <span className="text-xs font-medium text-stone-500 uppercase tracking-[0.2em] block mb-4">Our Core Services</span>
+          <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-xs font-medium text-stone-500 uppercase tracking-[0.2em] block mb-4"
+          >
+            Our Core Services
+          </motion.span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light font-serif text-stone-900 leading-tight max-w-3xl">
             Three Treatments.
             <br />
-            <span className="text-stone-600">Infinite Possibilities.</span>
+            <span className="text-stone-600 relative gradient-accent-line">
+              Infinite Possibilities.
+            </span>
           </h2>
         </motion.div>
 

@@ -7,11 +7,11 @@ import { ClientLayout } from "@/components/ClientLayout";
 
 export const metadata: Metadata = {
   title: "Anti-Wrinkle Injections (Botox) in Toronto | Mimi Beauty Clinics",
-  description: "Expert Botox and Dysport treatments in East York, Toronto. Starting at $110. Soften fine lines and prevent wrinkles with licensed professionals.",
-  keywords: "Botox Toronto, Dysport Toronto, Anti-wrinkle injections, Botox East York, Cosmetic injectables Toronto",
+  description: "Look refreshed, not frozen. Expert Botox and Dysport treatments in East York, Toronto starting at $110. Precision injectables that soften fine lines naturally—because you should look like you, just well-rested.",
+  keywords: "Botox Toronto, Dysport Toronto, Anti-wrinkle injections, Botox East York, Cosmetic injectables Toronto, Natural Botox results",
   openGraph: {
     title: "Anti-Wrinkle Injections (Botox) | Mimi Beauty Clinics",
-    description: "Expert Botox and Dysport treatments starting at $110 in Toronto.",
+    description: "Look refreshed, not frozen. Expert Botox treatments starting at $110 in Toronto.",
   },
 };
 
@@ -76,9 +76,11 @@ export default function BotoxPage() {
             <div className="relative h-96 lg:h-[500px] rounded-lg overflow-hidden">
               <Image
                 src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=80"
-                alt="Botox treatment"
+                alt="Botox anti-wrinkle injection treatment at Mimi Beauty Clinics - Natural, refreshed results"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                loading="lazy"
               />
             </div>
           </div>

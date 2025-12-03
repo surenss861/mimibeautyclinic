@@ -21,9 +21,11 @@ export function FinancingSection() {
           >
             <Image
               src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80"
-              alt="Financing options available"
+              alt="Flexible payment plans and financing options at Mimi Beauty Clinics - 0% interest available"
               fill
               className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              loading="lazy"
             />
           </motion.div>
 
@@ -39,10 +41,10 @@ export function FinancingSection() {
                 <span className="text-primary-600">Pay later</span>
               </h2>
             </div>
-            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Get the glow you deserve without breaking the bank. Purchase skincare packages, 
-              injection treatments, and medical aesthetic services + products all while staying 
-              within your budget with flexible 0% financing.
+            <p className="text-lg text-gray-600 mb-6 leading-relaxed font-light">
+              Your glow shouldn&apos;t wait for payday. We believe beautiful results should be accessible. 
+              That&apos;s why we offer flexible 0% financing on treatments, packages, and products—because 
+              investing in yourself shouldn&apos;t feel like a stretch.
             </p>
 
             <div className="space-y-3 mb-8">
@@ -59,12 +61,14 @@ export function FinancingSection() {
               ))}
             </div>
 
-            <button
+            <motion.button
+              whileHover={{ scale: 1.02, y: -2 }}
+              whileTap={{ scale: 0.98 }}
               onClick={handleLearnMore}
-              className="bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
+              className="bg-primary-600 text-white px-6 py-4 sm:px-8 sm:py-4 rounded-full font-semibold hover:bg-primary-700 transition-all shadow-lg hover:shadow-xl min-h-[56px] touch-manipulation"
             >
-              LEARN MORE
-            </button>
+              Learn More
+            </motion.button>
           </motion.div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import { Hero } from "@/components/Hero";
 import { ValueProposition } from "@/components/ValueProposition";
 import { ServicesGrid } from "@/components/ServicesGrid";
 import { AboutSection } from "@/components/AboutSection";
+import { TeamSection } from "@/components/TeamSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { TrustSignals } from "@/components/TrustSignals";
 import { OffersSection } from "@/components/OffersSection";
@@ -16,6 +17,7 @@ export default function Home() {
       <ValueProposition />
       <ServicesGrid />
       <AboutSection />
+      <TeamSection />
       <TestimonialsSection />
       <TrustSignals />
       <OffersSection />

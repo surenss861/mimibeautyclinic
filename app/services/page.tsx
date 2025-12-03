@@ -69,9 +69,11 @@ export default function ServicesPage() {
                     <div className="relative h-64">
                       <Image
                         src={service.image}
-                        alt={service.title}
+                        alt={`${service.title} - ${service.description} at Mimi Beauty Clinics Toronto`}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        loading="lazy"
                       />
                     </div>
                     <div className="p-6">

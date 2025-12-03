@@ -35,10 +35,13 @@ const trustedBrands = [
 
 export function TrustSignals() {
   return (
-    <section className="py-24 bg-white border-b border-roseQuartz-100/30">
-      <div className="container mx-auto px-4">
+    <section className="py-16 sm:py-24 bg-white border-b border-roseQuartz-100/30 relative overflow-hidden">
+      {/* Signature texture overlay */}
+      <div className="absolute inset-0 texture-overlay opacity-50"></div>
+      
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-16">
           {trustStats.map((stat, idx) => {
             const Icon = stat.icon;
             return (
@@ -58,10 +61,16 @@ export function TrustSignals() {
                     <Icon className="text-white" size={32} />
                   </div>
                 </motion.div>
-                <div className="text-5xl font-light text-deepBrown-500 mb-3 font-serif">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 + 0.2, duration: 0.5 }}
+                  className="text-4xl sm:text-5xl font-light text-deepBrown-500 mb-3 font-serif"
+                >
                   {stat.value}
-                </div>
-                <div className="text-sm font-medium text-deepBrown-400 uppercase tracking-widest">
+                </motion.div>
+                <div className="text-xs sm:text-sm font-medium text-deepBrown-400 uppercase tracking-widest">
                   {stat.label}
                 </div>
               </motion.div>

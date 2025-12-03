@@ -52,7 +52,15 @@ export function ValueProposition() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 md:mb-20"
         >
-          <span className="text-xs font-medium text-stone-500 uppercase tracking-[0.2em]">Why Mimi</span>
+          <motion.span
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="text-xs font-medium text-stone-500 uppercase tracking-[0.2em] inline-block"
+          >
+            Why Mimi
+          </motion.span>
         </motion.div>
 
         {/* Editorial Pull Quotes - Asymmetric Grid */}
@@ -75,7 +83,23 @@ export function ValueProposition() {
                   className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-primary-100/20 via-champagne-200/30 to-gold-100/20"
                 >
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-8xl font-light text-stone-200 font-serif">{value.accent}</span>
+                    <motion.span 
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: idx * 0.2 + 0.2, duration: 0.6, ease: "easeOut" }}
+                      className="text-8xl font-light text-stone-200 font-serif relative"
+                    >
+                      {value.accent}
+                      {/* Glowing accent line */}
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "100%" }}
+                        viewport={{ once: true }}
+                        transition={{ delay: idx * 0.2 + 0.5, duration: 0.8, ease: "easeOut" }}
+                        className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-primary-400 to-rose-400 rounded-full"
+                      />
+                    </motion.span>
                   </div>
                   <motion.div
                     initial={{ opacity: 0 }}
@@ -83,6 +107,19 @@ export function ValueProposition() {
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.2 + 0.3, duration: 0.8 }}
                     className="absolute inset-0 bg-gradient-to-br from-primary-200/10 to-transparent"
+                  />
+                  {/* Floating particles effect */}
+                  <motion.div
+                    animate={{
+                      y: [0, -10, 0],
+                      opacity: [0.3, 0.6, 0.3],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      delay: idx * 0.5,
+                    }}
+                    className="absolute top-4 right-4 w-2 h-2 bg-primary-400 rounded-full blur-sm"
                   />
                 </motion.div>
               </div>
@@ -98,7 +135,13 @@ export function ValueProposition() {
                   <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light font-serif text-stone-900 mb-4 md:mb-6 leading-tight">
                     {value.quote}
                   </h2>
-                  <div className="h-px w-20 bg-gradient-to-r from-primary-300 to-gold-300 mb-4 md:mb-6"></div>
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: 80 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.2 + 0.3, duration: 0.8, ease: "easeOut" }}
+                    className="h-px bg-gradient-to-r from-primary-300 to-gold-300 mb-4 md:mb-6"
+                  ></motion.div>
                   <p className="text-base sm:text-lg text-stone-600 leading-relaxed max-w-md">
                     {value.description}
                   </p>
@@ -110,12 +153,19 @@ export function ValueProposition() {
 
       </div>
 
-      {/* Curved Divider */}
+      {/* Curved Divider with gradient accent */}
       <div className="absolute bottom-0 left-0 right-0 h-24 overflow-hidden">
         <svg viewBox="0 0 1440 120" className="w-full h-full" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="dividerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#f0a1cf" stopOpacity="1" />
+              <stop offset="50%" stopColor="#ec4899" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="#f0a1cf" stopOpacity="1" />
+            </linearGradient>
+          </defs>
           <path
             d="M0,0 Q360,60 720,40 T1440,20 L1440,120 L0,120 Z"
-            fill="champagne-50"
+            fill="url(#dividerGradient)"
             className="text-champagne-50"
           />
         </svg>

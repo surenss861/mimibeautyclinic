@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     default: "Mimi Beauty Clinics | Toronto's Premier Aesthetic Destination",
     template: "%s | Mimi Beauty Clinics",
   },
-  description: "Glow like you mean it. Expert Botox, dermal fillers, laser treatments, and aesthetic services in East York, Toronto. Let our experts sculpt your best skin.",
+  description: "Glow is the new power. Mimi Beauty Clinics—where expert hands meet confident skin. Premium Botox, dermal fillers, and aesthetic treatments in East York, Toronto. Your personal beauty, elevated.",
   keywords: [
     "Botox Toronto",
     "Dermal Fillers Toronto",

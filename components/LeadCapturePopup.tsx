@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { X, Gift } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 export function LeadCapturePopup() {
   const [isOpen, setIsOpen] = useState(false);
@@ -85,14 +86,14 @@ export function LeadCapturePopup() {
                     <Gift className="text-primary-600" size={32} />
                   </div>
                 </div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-2 font-serif">
-                  15% OFF
+                <h2 className="text-3xl font-light text-gray-900 mb-2 font-serif">
+                  Find Your Perfect Treatment
                 </h2>
-                <p className="text-lg text-gray-700 font-semibold">
-                  ON YOUR FIRST TREATMENT
+                <p className="text-lg text-gray-700 font-medium mb-1">
+                  Take our quick quiz
                 </p>
-                <p className="text-sm text-gray-600 mt-2">
-                  Subscribe to receive exclusive offers and beauty tips
+                <p className="text-sm text-gray-600 mt-2 leading-relaxed">
+                  Discover which treatment aligns with your skin goals. Plus, get 15% off your first visit when you subscribe.
                 </p>
               </div>
 
@@ -134,18 +135,27 @@ export function LeadCapturePopup() {
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
                 />
-                <button
-                  type="submit"
-                  className="w-full bg-primary-600 text-white py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
-                >
-                  SUBSCRIBE
-                </button>
+                <div className="flex gap-3">
+                  <Link
+                    href="/quiz"
+                    onClick={handleClose}
+                    className="flex-1 bg-primary-600 text-white py-3 rounded-lg font-semibold hover:bg-primary-700 transition-all text-center min-h-[48px] flex items-center justify-center touch-manipulation"
+                  >
+                    Take Quiz
+                  </Link>
+                  <button
+                    type="submit"
+                    className="flex-1 bg-gray-900 text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition-all min-h-[48px] touch-manipulation"
+                  >
+                    Subscribe
+                  </button>
+                </div>
                 <button
                   type="button"
                   onClick={handleClose}
-                  className="w-full text-sm text-gray-500 hover:text-gray-700"
+                  className="w-full text-sm text-gray-500 hover:text-gray-700 py-2 touch-manipulation"
                 >
-                  No Thanks
+                  Maybe Later
                 </button>
               </form>
 

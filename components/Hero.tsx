@@ -131,12 +131,12 @@ export function Hero() {
               </span>
               {" "}Is the
               <br />
-              <span className="relative inline-block">
+              <span className="relative inline-block gradient-accent-line">
                 <span className="relative z-10">New Power</span>
                 {/* Handwritten Brushstroke Underline */}
                 <motion.svg
                   initial={{ pathLength: 0, opacity: 0 }}
-                  animate={{ pathLength: 1, opacity: 0.5 }}
+                  animate={{ pathLength: 1, opacity: 0.6 }}
                   transition={{ delay: 1.2, duration: 1.5, ease: "easeOut" }}
                   className="absolute -bottom-2 left-0 w-full h-8 text-primary-400"
                   viewBox="0 0 300 40"
@@ -148,6 +148,7 @@ export function Hero() {
                     stroke="currentColor"
                     strokeWidth="3"
                     strokeLinecap="round"
+                    className="signature-flourish"
                   />
                 </motion.svg>
               </span>

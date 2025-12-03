@@ -87,11 +87,31 @@ export function OffersSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 md:mb-20"
         >
-          <span className="text-xs font-medium text-champagne-200/80 uppercase tracking-[0.2em] block mb-4">Special Offers</span>
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-xs font-medium text-champagne-200/80 uppercase tracking-[0.2em] block mb-4"
+          >
+            Special Offers
+          </motion.span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light font-serif leading-tight mb-6">
             Treat Yourself
             <br />
-            <span className="text-champagne-200">To More</span>
+            <span className="text-champagne-200 relative">
+              To More
+              <motion.svg
+                initial={{ pathLength: 0, opacity: 0 }}
+                whileInView={{ pathLength: 1, opacity: 0.4 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5, duration: 1.2, ease: "easeOut" }}
+                className="absolute -bottom-2 left-0 w-full h-4 text-champagne-300"
+                viewBox="0 0 200 16"
+                preserveAspectRatio="none"
+              >
+                <path d="M0,12 Q50,4 100,8 T200,10" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              </motion.svg>
+            </span>
           </h2>
         </motion.div>
 

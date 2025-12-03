@@ -64,9 +64,11 @@ export default function BlogPage() {
                   <div className="relative h-64">
                     <Image
                       src={post.image}
-                      alt={post.title}
+                      alt={`${post.title} - Beauty tips and insights from Mimi Beauty Clinics`}
                       fill
                       className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      loading="lazy"
                     />
                   </div>
                   <div className="p-6">

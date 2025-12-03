@@ -49,11 +49,20 @@ export function TestimonialsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 md:mb-20"
         >
-          <span className="text-xs font-medium text-stone-500 uppercase tracking-[0.2em] block mb-4">Client Stories</span>
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-xs font-medium text-stone-500 uppercase tracking-[0.2em] block mb-4"
+          >
+            Client Stories
+          </motion.span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light font-serif text-stone-900 leading-tight mb-6">
             Real Voices.
             <br />
-            <span className="text-stone-600">Real Results.</span>
+            <span className="text-stone-600 relative gradient-accent-line">
+              Real Results.
+            </span>
           </h2>
         </motion.div>
 
