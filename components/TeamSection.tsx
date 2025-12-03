@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { Award, Star } from "lucide-react";
 
 const teamMembers = [
@@ -9,7 +8,6 @@ const teamMembers = [
     name: "Christie",
     role: "Lead Injector & Founder",
     bio: "With over 10 years perfecting the art of natural enhancement, Christie combines medical precision with an artist&apos;s eye. She sees beauty as a conversation—listening to what you want, understanding your features, and creating results that feel authentically you.",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&q=80",
     credentials: "RN, CANS Certified",
     experience: "10+ Years",
     treatments: "3,000+",
@@ -19,7 +17,6 @@ const teamMembers = [
     name: "Kateryna",
     role: "Senior Injector",
     bio: "Kateryna brings a gentle touch and meticulous attention to detail to every treatment. Specializing in natural-looking enhancements, she believes the best results are the ones that make you feel like the most confident version of yourself—not someone else.",
-    image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&q=80",
     credentials: "RN, Aesthetic Specialist",
     experience: "8+ Years",
     treatments: "2,000+",
@@ -63,15 +60,10 @@ export function TeamSection() {
               className="group"
             >
               <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border border-gray-100">
-                <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden ring-4 ring-primary-100 group-hover:ring-primary-300 transition-all">
-                  <Image
-                    src={member.image}
-                    alt={`${member.name}, ${member.role} at Mimi Beauty Clinics - ${member.credentials}`}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    sizes="(max-width: 768px) 200px, 250px"
-                    loading="lazy"
-                  />
+                <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden ring-4 ring-primary-100 group-hover:ring-primary-300 transition-all bg-gradient-to-br from-primary-100/30 to-rose-100/30 flex items-center justify-center">
+                  <div className="text-6xl font-light text-primary-400/40 font-serif">
+                    {member.name.charAt(0)}
+                  </div>
                 </div>
                 <div className="text-center">
                   <h3 className="text-2xl sm:text-3xl font-light text-gray-900 mb-2 font-serif">
