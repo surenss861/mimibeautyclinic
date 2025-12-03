@@ -7,6 +7,7 @@ import { useRef, useState, useEffect } from "react";
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [glowText, setGlowText] = useState("");
+  const [mounted, setMounted] = useState(false);
   const fullText = "Glow";
   
   const { scrollYProgress } = useScroll({
@@ -16,6 +17,10 @@ export function Hero() {
 
   const y = useTransform(scrollYProgress, [0, 1], [0, 150]);
   const opacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Typewriter effect for "Glow"
   useEffect(() => {
