@@ -5,11 +5,6 @@ import Image from "next/image";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, EffectFade } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/effect-fade";
 
 const beforeAfter = [
   {
@@ -54,6 +49,14 @@ export function BeforeAfterSection() {
   const y = useTransform(scrollYProgress, [0, 1], [40, -40]);
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const nextSlide = () => {
+    setActiveIndex((prev) => (prev + 1) % beforeAfter.length);
+  };
+
+  const prevSlide = () => {
+    setActiveIndex((prev) => (prev - 1 + beforeAfter.length) % beforeAfter.length);
+  };
+
   return (
     <section ref={sectionRef} className="py-32 bg-gradient-to-b from-champagne-100/30 to-stone-50 relative overflow-hidden">
       {/* Parallax Background */}
@@ -82,27 +85,25 @@ export function BeforeAfterSection() {
 
         {/* Interactive Slider */}
         <div className="max-w-6xl mx-auto">
-          <Swiper
-            modules={[Navigation, EffectFade]}
-            effect="fade"
-            navigation={{
-              nextEl: ".swiper-button-next-custom",
-              prevEl: ".swiper-button-prev-custom",
-            }}
-            onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-            className="relative h-[600px] md:h-[700px] rounded-3xl overflow-hidden bg-stone-100 shadow-2xl"
-          >
-            {beforeAfter.map((item, idx) => (
-              <SwiperSlide key={idx}>
+          <div className="relative h-[600px] md:h-[700px] rounded-3xl overflow-hidden bg-stone-100 shadow-2xl">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeIndex}
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -30 }}
+                transition={{ duration: 0.5 }}
+                className="absolute inset-0"
+              >
                 <div className="grid grid-cols-2 h-full relative">
                   {/* Before */}
                   <div className="relative overflow-hidden">
                     <Image
-                      src={item.before}
+                      src={beforeAfter[activeIndex].before}
                       alt="Before treatment"
                       fill
                       className="object-cover"
-                      priority={idx === 0}
+                      priority={activeIndex === 0}
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50" />
                     <motion.div
@@ -118,11 +119,11 @@ export function BeforeAfterSection() {
                   {/* After */}
                   <div className="relative overflow-hidden">
                     <Image
-                      src={item.after}
+                      src={beforeAfter[activeIndex].after}
                       alt="After treatment"
                       fill
                       className="object-cover"
-                      priority={idx === 0}
+                      priority={activeIndex === 0}
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50" />
                     <motion.div
@@ -141,17 +142,29 @@ export function BeforeAfterSection() {
                     <div className="w-2 h-2 rounded-full bg-primary-500" />
                   </div>
                 </div>
-              </SwiperSlide>
-            ))}
+              </motion.div>
+            </AnimatePresence>
 
-            {/* Custom Navigation */}
-            <button className="swiper-button-prev-custom absolute left-6 top-1/2 -translate-y-1/2 backdrop-blur-md bg-champagne-50/90 hover:bg-champagne-50 rounded-full p-4 shadow-xl border border-stone-200/50 transition-all z-20 group">
+            {/* Navigation */}
+            <motion.button
+              whileHover={{ scale: 1.1, x: -4 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={prevSlide}
+              className="absolute left-6 top-1/2 -translate-y-1/2 backdrop-blur-md bg-champagne-50/90 hover:bg-champagne-50 rounded-full p-4 shadow-xl border border-stone-200/50 transition-all z-20 group"
+              aria-label="Previous"
+            >
               <ChevronLeft size={24} className="text-stone-900 group-hover:text-primary-600 transition-colors" />
-            </button>
-            <button className="swiper-button-next-custom absolute right-6 top-1/2 -translate-y-1/2 backdrop-blur-md bg-champagne-50/90 hover:bg-champagne-50 rounded-full p-4 shadow-xl border border-stone-200/50 transition-all z-20 group">
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.1, x: 4 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={nextSlide}
+              className="absolute right-6 top-1/2 -translate-y-1/2 backdrop-blur-md bg-champagne-50/90 hover:bg-champagne-50 rounded-full p-4 shadow-xl border border-stone-200/50 transition-all z-20 group"
+              aria-label="Next"
+            >
               <ChevronRight size={24} className="text-stone-900 group-hover:text-primary-600 transition-colors" />
-            </button>
-          </Swiper>
+            </motion.button>
+          </div>
 
           {/* Editorial Caption with Tags */}
           <motion.div
@@ -189,9 +202,7 @@ export function BeforeAfterSection() {
             {beforeAfter.map((_, idx) => (
               <button
                 key={idx}
-                onClick={() => {
-                  // Swiper will handle this via navigation
-                }}
+                onClick={() => setActiveIndex(idx)}
                 className={`h-2 rounded-full transition-all ${
                   idx === activeIndex ? "bg-primary-600 w-12" : "bg-stone-300 w-2 hover:bg-stone-400"
                 }`}
