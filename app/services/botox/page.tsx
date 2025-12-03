@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle, Clock, DollarSign } from "lucide-react";
+import { BookButton } from "@/components/BookButton";
 
 export const metadata: Metadata = {
   title: "Anti-Wrinkle Injections (Botox) in Toronto | Mimi Beauty Clinics",
@@ -45,7 +46,7 @@ export default function BotoxPage() {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary-50 to-white">
+      <section className="py-20 bg-gradient-to-br from-primary-50 to-champagne-50">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -66,17 +67,9 @@ export default function BotoxPage() {
                   <span className="font-semibold">15-30 minutes</span>
                 </div>
               </div>
-              <button
-                onClick={() =>
-                  window.open(
-                    "https://www.vagaro.com/mimibeautyclinics",
-                    "_blank"
-                  )
-                }
-                className="bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors mb-4"
-              >
+              <BookButton className="mb-4">
                 Book Your Botox Treatment
-              </button>
+              </BookButton>
             </div>
             <div className="relative h-96 lg:h-[500px] rounded-lg overflow-hidden">
               <Image
@@ -91,7 +84,7 @@ export default function BotoxPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-champagne-50">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center font-serif">
             How Botox Works
@@ -128,7 +121,7 @@ export default function BotoxPage() {
             {benefits.map((benefit, idx) => (
               <div
                 key={idx}
-                className="bg-white p-6 rounded-lg shadow-md flex items-start gap-4"
+                className="bg-champagne-50 p-6 rounded-lg shadow-md flex items-start gap-4 border border-stone-200/50"
               >
                 <CheckCircle className="text-primary-600 flex-shrink-0" size={24} />
                 <span className="text-gray-700 font-medium">{benefit}</span>
@@ -139,7 +132,7 @@ export default function BotoxPage() {
       </section>
 
       {/* FAQs */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-champagne-50">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center font-serif">
             Frequently Asked Questions
@@ -170,17 +163,9 @@ export default function BotoxPage() {
             Book your Botox consultation today and discover how we can help you
             achieve a more youthful appearance.
           </p>
-          <button
-            onClick={() =>
-              window.open(
-                "https://www.vagaro.com/mimibeautyclinics",
-                "_blank"
-              )
-            }
-            className="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-          >
+          <BookButton variant="secondary">
             Book Your Appointment
-          </button>
+          </BookButton>
           <div className="mt-8">
             <Link
               href="/services"

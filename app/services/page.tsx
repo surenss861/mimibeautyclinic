@@ -49,7 +49,7 @@ const services = [
 export default function ServicesPage() {
   return (
     <div className="min-h-screen pt-20">
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-champagne-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h1 className="text-5xl font-bold text-gray-900 mb-4 font-serif">
@@ -63,7 +63,7 @@ export default function ServicesPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, idx) => (
               <Link key={idx} href={service.href}>
-                <div className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+                <div className="bg-champagne-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow group border border-stone-200/50">
                   <div className="relative h-64">
                     <Image
                       src={service.image}
