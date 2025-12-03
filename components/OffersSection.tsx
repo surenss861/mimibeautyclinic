@@ -71,24 +71,24 @@ export function OffersSection() {
   };
 
   return (
-    <section className="py-32 bg-gradient-to-br from-stone-900 via-stone-800 to-primary-900 text-champagne-50 relative overflow-hidden">
+    <section className="py-16 sm:py-24 md:py-32 bg-gradient-to-br from-stone-900 via-stone-800 to-primary-900 text-champagne-50 relative overflow-hidden">
       {/* Rich Background Gradients */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-600/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-rose-600/30 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-primary-600/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-[250px] h-[250px] md:w-[500px] md:h-[500px] bg-rose-600/30 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-8 lg:px-12 max-w-7xl relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl relative z-10">
         {/* Editorial Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-20"
         >
           <span className="text-xs font-medium text-champagne-200/80 uppercase tracking-[0.2em] block mb-4">Special Offers</span>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-light font-serif leading-tight mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light font-serif leading-tight mb-6">
             Treat Yourself
             <br />
             <span className="text-champagne-200">To More</span>
@@ -96,7 +96,7 @@ export function OffersSection() {
         </motion.div>
 
         {/* Flip Cards Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           {offers.map((offer, idx) => {
             const isFlipped = flippedCards.has(offer.id);
             return (
@@ -106,7 +106,7 @@ export function OffersSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ delay: idx * 0.15, duration: 0.8 }}
-                className="relative h-[400px] perspective-1000"
+                className="relative h-[350px] sm:h-[400px] perspective-1000"
                 style={{ perspective: "1000px" }}
               >
                 <motion.div
@@ -125,7 +125,7 @@ export function OffersSection() {
                     <motion.div
                       whileHover={{ scale: 1.02 }}
                       onClick={() => toggleFlip(offer.id)}
-                      className="relative h-full bg-gradient-to-br from-champagne-50/90 to-stone-50/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-stone-200/50 cursor-pointer"
+                      className="relative h-full bg-gradient-to-br from-champagne-50/90 to-stone-50/80 backdrop-blur-sm rounded-2xl md:rounded-3xl p-6 sm:p-8 shadow-2xl border border-stone-200/50 cursor-pointer touch-manipulation"
                     >
                       <div className="absolute top-6 right-6">
                         <div className="bg-primary-600/90 text-white px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wide">
@@ -160,7 +160,7 @@ export function OffersSection() {
                     <motion.div
                       whileHover={{ scale: 1.02 }}
                       onClick={() => toggleFlip(offer.id)}
-                      className="relative h-full bg-gradient-to-br from-primary-600/95 to-rose-600/90 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-primary-500/30 cursor-pointer text-white"
+                      className="relative h-full bg-gradient-to-br from-primary-600/95 to-rose-600/90 backdrop-blur-sm rounded-2xl md:rounded-3xl p-6 sm:p-8 shadow-2xl border border-primary-500/30 cursor-pointer text-white touch-manipulation"
                     >
                       <div className="h-full flex flex-col">
                         <h3 className="text-2xl font-light font-serif mb-4">{offer.title}</h3>

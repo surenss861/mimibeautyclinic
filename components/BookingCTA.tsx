@@ -9,7 +9,7 @@ export function BookingCTA() {
   };
 
   return (
-    <section className="py-32 bg-gradient-to-br from-stone-900 via-stone-800 to-stone-900 text-champagne-50 relative overflow-hidden">
+    <section className="py-16 sm:py-24 md:py-32 bg-gradient-to-br from-stone-900 via-stone-800 to-stone-900 text-champagne-50 relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute inset-0 opacity-10">
         <motion.div
@@ -39,7 +39,7 @@ export function BookingCTA() {
         />
       </div>
 
-      <div className="container mx-auto px-4 md:px-8 lg:px-12 text-center relative z-10 max-w-5xl">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 text-center relative z-10 max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -47,10 +47,10 @@ export function BookingCTA() {
           transition={{ duration: 0.8 }}
         >
           {/* Quiet, Reassuring Header */}
-          <span className="text-xs font-medium text-champagne-200/80 uppercase tracking-[0.2em] block mb-6">
+          <span className="text-xs font-medium text-champagne-200/80 uppercase tracking-[0.2em] block mb-4 md:mb-6">
             Ready to Begin?
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-light font-serif mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light font-serif mb-4 md:mb-6 leading-tight">
             Your Transformation
             <br />
             <span className="text-champagne-200">Starts Here</span>
@@ -68,10 +68,10 @@ export function BookingCTA() {
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
               onClick={handleBookNow}
-              className="group bg-champagne-50 text-stone-900 px-10 py-5 rounded-full font-medium hover:bg-champagne-100 transition-all shadow-2xl flex items-center justify-center gap-2 min-w-[260px]"
+              className="group bg-champagne-50 text-stone-900 px-6 py-4 sm:px-10 sm:py-5 rounded-full font-medium hover:bg-champagne-100 transition-all shadow-2xl flex items-center justify-center gap-2 w-full sm:w-auto sm:min-w-[260px] min-h-[56px] touch-manipulation"
             >
               <Calendar size={20} />
-              Book Online Now
+              <span className="text-sm sm:text-base">Book Online Now</span>
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </motion.button>
 
@@ -79,10 +79,10 @@ export function BookingCTA() {
               href="tel:6473666464"
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="backdrop-blur-sm bg-stone-800/50 text-champagne-50 px-10 py-5 rounded-full font-medium hover:bg-stone-800/70 transition-all border-2 border-stone-700/50 flex items-center justify-center gap-2 min-w-[260px]"
+              className="backdrop-blur-sm bg-stone-800/50 text-champagne-50 px-6 py-4 sm:px-10 sm:py-5 rounded-full font-medium hover:bg-stone-800/70 transition-all border-2 border-stone-700/50 flex items-center justify-center gap-2 w-full sm:w-auto sm:min-w-[260px] min-h-[56px] touch-manipulation"
             >
               <Phone size={20} />
-              Call (647) 366-6464
+              <span className="text-sm sm:text-base">Call (647) 366-6464</span>
             </motion.a>
           </div>
 

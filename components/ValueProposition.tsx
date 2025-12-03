@@ -32,7 +32,7 @@ export function ValueProposition() {
   const y = useTransform(scrollYProgress, [0, 1], [30, -30]);
 
   return (
-    <section ref={sectionRef} id="about" className="py-32 bg-gradient-to-b from-champagne-50 to-stone-50/30 relative overflow-hidden">
+    <section ref={sectionRef} id="about" className="py-16 sm:py-24 md:py-32 bg-gradient-to-b from-champagne-50 to-stone-50/30 relative overflow-hidden">
       {/* Floating Elements */}
       <motion.div
         style={{ y }}
@@ -43,20 +43,20 @@ export function ValueProposition() {
         </svg>
       </motion.div>
 
-      <div className="container mx-auto px-4 md:px-8 lg:px-12 max-w-7xl relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl relative z-10">
         {/* Section Label */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-20"
         >
           <span className="text-xs font-medium text-stone-500 uppercase tracking-[0.2em]">Why Mimi</span>
         </motion.div>
 
         {/* Editorial Pull Quotes - Asymmetric Grid */}
-        <div className="space-y-16 md:space-y-24">
+        <div className="space-y-12 md:space-y-16 lg:space-y-24">
           {brandValues.map((value, idx) => (
             <motion.div
               key={idx}
@@ -95,11 +95,11 @@ export function ValueProposition() {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.2 + 0.1, duration: 0.8 }}
                 >
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-light font-serif text-stone-900 mb-6 leading-tight">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light font-serif text-stone-900 mb-4 md:mb-6 leading-tight">
                     {value.quote}
                   </h2>
-                  <div className="h-px w-20 bg-gradient-to-r from-primary-300 to-gold-300 mb-6"></div>
-                  <p className="text-lg text-stone-600 leading-relaxed max-w-md">
+                  <div className="h-px w-20 bg-gradient-to-r from-primary-300 to-gold-300 mb-4 md:mb-6"></div>
+                  <p className="text-base sm:text-lg text-stone-600 leading-relaxed max-w-md">
                     {value.description}
                   </p>
                 </motion.div>

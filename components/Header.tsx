@@ -148,18 +148,27 @@ export function Header() {
               ))}
             </nav>
 
-            {/* Sophisticated Book Now Button */}
+            {/* Sophisticated Book Now Button - Desktop */}
             <button
               onClick={handleBookNow}
-              className="hidden lg:block bg-primary-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-primary-700 transition-all shadow-lg shadow-primary-600/30 hover:shadow-xl hover:shadow-primary-600/40 hover:scale-105"
+              className="hidden lg:block bg-primary-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-primary-700 transition-all shadow-lg shadow-primary-600/30 hover:shadow-xl hover:shadow-primary-600/40 hover:scale-105 min-h-[44px] touch-manipulation"
             >
               Book Now
+            </button>
+            
+            {/* Mobile Book Now Button */}
+            <button
+              onClick={handleBookNow}
+              className="lg:hidden bg-primary-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary-700 transition-all shadow-lg shadow-primary-600/30 min-h-[44px] min-w-[44px] touch-manipulation"
+              aria-label="Book Now"
+            >
+              Book
             </button>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden text-gray-700"
+              className="lg:hidden text-gray-700 p-2 -mr-2 min-w-[44px] min-h-[44px] flex items-center justify-center touch-manipulation"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -204,7 +213,7 @@ export function Header() {
                 ))}
                 <button
                   onClick={handleBookNow}
-                  className="w-full bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold mt-4"
+                  className="w-full bg-gray-900 text-white px-6 py-4 rounded-lg font-semibold mt-4 min-h-[56px] touch-manipulation"
                 >
                   BOOK NOW
                 </button>

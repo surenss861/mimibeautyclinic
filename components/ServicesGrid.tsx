@@ -139,13 +139,13 @@ function ServiceCard({ service, idx, groupIdx }: { service: any; idx: number; gr
           <span className="text-xs font-medium text-stone-500 uppercase tracking-wider block mb-3">
             {service.subtitle}
           </span>
-          <h3 className="text-4xl md:text-5xl font-light font-serif text-stone-900 mb-4 leading-tight">
+          <h3 className="text-3xl sm:text-4xl md:text-5xl font-light font-serif text-stone-900 mb-4 leading-tight">
             {service.title}
           </h3>
-          <p className="text-xl text-stone-700 mb-6 font-light italic">
+          <p className="text-lg sm:text-xl text-stone-700 mb-6 font-light italic">
             {service.tagline}
           </p>
-          <p className="text-stone-600 leading-relaxed mb-8 max-w-md">
+          <p className="text-base sm:text-lg text-stone-600 leading-relaxed mb-8 max-w-md">
             {service.description}
           </p>
 
@@ -163,10 +163,10 @@ function ServiceCard({ service, idx, groupIdx }: { service: any; idx: number; gr
           </motion.div>
 
           {/* CTA */}
-          <Link href={service.href}>
+          <Link href={service.href} className="inline-block min-h-[44px] min-w-[44px] touch-manipulation">
             <motion.div
               whileHover={{ x: 4 }}
-              className="inline-flex items-center gap-2 text-stone-900 font-medium group"
+              className="inline-flex items-center gap-2 text-stone-900 font-medium group py-2"
             >
               <span>Learn More</span>
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -189,24 +189,24 @@ export function ServicesGrid() {
   const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
 
   return (
-    <section ref={sectionRef} id="services" className="py-32 bg-champagne-50 relative overflow-hidden">
+    <section ref={sectionRef} id="services" className="py-16 sm:py-24 md:py-32 bg-champagne-50 relative overflow-hidden">
       {/* Background Elements */}
       <motion.div
         style={{ y }}
         className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-primary-100/10 rounded-full blur-3xl -z-0"
       />
 
-      <div className="container mx-auto px-4 md:px-8 lg:px-12 max-w-7xl relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl relative z-10">
         {/* Section Header - Editorial Style */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="mb-20"
+          className="mb-12 md:mb-20"
         >
           <span className="text-xs font-medium text-stone-500 uppercase tracking-[0.2em] block mb-4">Our Core Services</span>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-light font-serif text-stone-900 leading-tight max-w-3xl">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light font-serif text-stone-900 leading-tight max-w-3xl">
             Three Treatments.
             <br />
             <span className="text-stone-600">Infinite Possibilities.</span>

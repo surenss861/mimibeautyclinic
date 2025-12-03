@@ -24,19 +24,21 @@ export function StickyBookingCTA() {
   if (!isVisible) return null;
 
   return (
-    <motion.div
-      initial={{ y: 100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      exit={{ y: 100, opacity: 0 }}
-      className="fixed bottom-6 right-6 z-50 lg:block hidden"
-    >
-      <motion.button
-        onClick={handleBookNow}
-        whileHover={{ scale: 1.05, y: -2 }}
-        whileTap={{ scale: 0.95 }}
-        className="group relative bg-primary-600 text-white px-8 py-4 rounded-full shadow-2xl shadow-primary-600/40 flex items-center gap-2 font-semibold hover:bg-primary-700 transition-all overflow-hidden"
-        aria-label="Book an appointment"
+    <>
+      {/* Desktop Sticky Button */}
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: 100, opacity: 0 }}
+        className="fixed bottom-6 right-6 z-50 hidden lg:block"
       >
+        <motion.button
+          onClick={handleBookNow}
+          whileHover={{ scale: 1.05, y: -2 }}
+          whileTap={{ scale: 0.95 }}
+          className="group relative bg-primary-600 text-white px-8 py-4 rounded-full shadow-2xl shadow-primary-600/40 flex items-center gap-2 font-semibold hover:bg-primary-700 transition-all overflow-hidden"
+          aria-label="Book an appointment"
+        >
         {/* Glowing Background Effect */}
         <motion.div
           animate={{
@@ -68,7 +70,39 @@ export function StickyBookingCTA() {
           }}
           className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
         />
-      </motion.button>
-    </motion.div>
+        </motion.button>
+      </motion.div>
+
+      {/* Mobile Sticky Button */}
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: 100, opacity: 0 }}
+        className="fixed bottom-4 left-4 right-4 z-50 lg:hidden"
+      >
+        <motion.button
+          onClick={handleBookNow}
+          whileTap={{ scale: 0.95 }}
+          className="w-full bg-primary-600 text-white px-6 py-4 rounded-full shadow-2xl shadow-primary-600/40 flex items-center justify-center gap-2 font-semibold hover:bg-primary-700 transition-all overflow-hidden min-h-[56px] touch-manipulation"
+          aria-label="Book an appointment"
+        >
+          <Calendar size={22} className="relative z-10" />
+          <span className="relative z-10">Book Now</span>
+          
+          {/* Shimmer Effect */}
+          <motion.div
+            animate={{
+              x: ["-100%", "100%"],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+          />
+        </motion.button>
+      </motion.div>
+    </>
   );
 }

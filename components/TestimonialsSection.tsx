@@ -39,18 +39,18 @@ export function TestimonialsSection() {
   }, []);
 
   return (
-    <section className="py-32 bg-champagne-50 relative overflow-hidden">
-      <div className="container mx-auto px-4 md:px-8 lg:px-12 max-w-7xl relative z-10">
+    <section className="py-16 sm:py-24 md:py-32 bg-champagne-50 relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl relative z-10">
         {/* Editorial Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-20"
         >
           <span className="text-xs font-medium text-stone-500 uppercase tracking-[0.2em] block mb-4">Client Stories</span>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-light font-serif text-stone-900 leading-tight mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light font-serif text-stone-900 leading-tight mb-6">
             Real Voices.
             <br />
             <span className="text-stone-600">Real Results.</span>
@@ -66,14 +66,14 @@ export function TestimonialsSection() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -30, scale: 0.95 }}
               transition={{ duration: 0.5 }}
-              className="bg-gradient-to-br from-champagne-50 to-stone-50/80 rounded-3xl p-12 md:p-16 shadow-xl border border-stone-200/50"
+              className="bg-gradient-to-br from-champagne-50 to-stone-50/80 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 shadow-xl border border-stone-200/50"
             >
-              <div className="flex justify-center mb-8">
+              <div className="flex justify-center mb-6 md:mb-8">
                 {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                  <Star key={i} className="text-gold-400 fill-gold-400" size={28} />
+                  <Star key={i} className="text-gold-400 fill-gold-400" size={24} />
                 ))}
               </div>
-              <p className="text-2xl md:text-3xl text-stone-800 mb-10 leading-relaxed font-light text-center italic">
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-stone-800 mb-6 md:mb-10 leading-relaxed font-light text-center italic">
                 &ldquo;{testimonials[currentIndex].text}&rdquo;
               </p>
               <div className="text-center">
@@ -88,12 +88,12 @@ export function TestimonialsSection() {
           </AnimatePresence>
 
           {/* Navigation Dots */}
-          <div className="flex justify-center gap-3 mt-8">
+          <div className="flex justify-center gap-3 mt-6 md:mt-8">
             {testimonials.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
-                className={`h-2 rounded-full transition-all ${
+                className={`h-2 rounded-full transition-all min-w-[44px] min-h-[44px] flex items-center justify-center touch-manipulation ${
                   idx === currentIndex ? "bg-primary-600 w-12" : "bg-stone-300 w-2 hover:bg-stone-400"
                 }`}
                 aria-label={`Go to testimonial ${idx + 1}`}

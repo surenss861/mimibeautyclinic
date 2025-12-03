@@ -53,11 +53,11 @@ export function Hero() {
       {/* Rich Berry & Deep Blush Gradient Overlays */}
       <motion.div
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, -50]) }}
-        className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-primary-700/30 via-rose-600/20 to-transparent rounded-full blur-3xl z-0"
+        className="absolute top-0 right-0 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-gradient-to-br from-primary-700/30 via-rose-600/20 to-transparent rounded-full blur-3xl z-0"
       />
       <motion.div
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, 50]) }}
-        className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-rose-700/25 via-primary-600/15 to-transparent rounded-full blur-3xl z-0"
+        className="absolute bottom-0 left-0 w-[250px] h-[250px] md:w-[500px] md:h-[500px] bg-gradient-to-tr from-rose-700/25 via-primary-600/15 to-transparent rounded-full blur-3xl z-0"
       />
 
       {/* Floating Decorative Elements */}
@@ -71,7 +71,7 @@ export function Hero() {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-32 right-20 w-16 h-16 opacity-20 z-10"
+        className="absolute top-32 right-10 md:right-20 w-12 h-12 md:w-16 md:h-16 opacity-20 z-10 hidden md:block"
       >
         <svg viewBox="0 0 100 100" className="w-full h-full text-primary-300">
           <path d="M50 20 Q70 40 50 60 Q30 40 50 20" fill="currentColor" opacity="0.3" />
@@ -79,16 +79,16 @@ export function Hero() {
       </motion.div>
 
       {/* Editorial Content - Asymmetric Layout */}
-      <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-20 max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-20 max-w-7xl">
         <motion.div
           style={{ y, opacity }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="grid lg:grid-cols-2 gap-12 items-center"
+          className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center"
         >
           {/* Left Column - Main Content */}
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8">
             {/* Small Editorial Label */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -104,7 +104,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              className="text-6xl md:text-7xl lg:text-8xl font-light font-serif leading-[0.95] text-champagne-50 tracking-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light font-serif leading-[0.95] text-champagne-50 tracking-tight"
             >
               <span className="relative inline-block">
                 <motion.span
@@ -158,7 +158,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="text-xl md:text-2xl text-champagne-100 leading-relaxed max-w-lg font-light"
+              className="text-lg sm:text-xl md:text-2xl text-champagne-100 leading-relaxed max-w-lg font-light"
             >
               You, just enhanced. Expert hands. Confident skin.
             </motion.p>
@@ -186,7 +186,7 @@ export function Hero() {
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={handleBookNow}
-                className="group relative bg-champagne-50 text-stone-900 px-8 py-4 rounded-full text-base font-medium hover:bg-champagne-100 transition-all shadow-xl hover:shadow-2xl flex items-center gap-3 overflow-hidden"
+                className="group relative bg-champagne-50 text-stone-900 px-6 py-4 sm:px-8 sm:py-4 rounded-full text-sm sm:text-base font-medium hover:bg-champagne-100 transition-all shadow-xl hover:shadow-2xl flex items-center gap-2 sm:gap-3 overflow-hidden min-h-[44px] touch-manipulation"
               >
                 <span className="relative z-10">Book Your Consultation</span>
                 <ArrowRight size={18} className="relative z-10 group-hover:translate-x-1 transition-transform" />
@@ -211,18 +211,18 @@ export function Hero() {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            className="relative"
+            className="relative mt-8 lg:mt-0"
           >
             {/* Pull Quote Card with Rich Colors */}
-            <div className="relative bg-gradient-to-br from-champagne-50/90 via-stone-50/80 to-primary-50/30 backdrop-blur-md rounded-3xl p-10 md:p-12 shadow-2xl border border-stone-200/50">
+            <div className="relative bg-gradient-to-br from-champagne-50/90 via-stone-50/80 to-primary-50/30 backdrop-blur-md rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-2xl border border-stone-200/50">
               <div className="absolute -top-4 -left-4 w-16 h-16 bg-primary-400/40 rounded-full blur-xl"></div>
               <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-rose-400/30 rounded-full blur-xl"></div>
               
               <div className="relative z-10">
-                <svg className="w-12 h-12 text-primary-400/50 mb-6" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-primary-400/50 mb-4 md:mb-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.984zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h3.983v10h-9.985z"/>
                 </svg>
-                <p className="text-2xl md:text-3xl font-light text-stone-800 leading-relaxed mb-6 italic">
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-stone-800 leading-relaxed mb-4 md:mb-6 italic">
                   &ldquo;Each of you is a unique canvas, waiting to be adorned with subtle enhancements.&rdquo;
                 </p>
                 <div className="flex items-center gap-3">

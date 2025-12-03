@@ -48,26 +48,26 @@ export function Footer() {
       {/* Gradient Border Top */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-500/40 via-gold-500/40 to-transparent" />
       
-      <div className="container mx-auto px-4 md:px-8 lg:px-12 py-16">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-12 md:py-16">
         {/* Instagram Feed Strip */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-16"
+          className="mb-12 md:mb-16"
         >
-          <div className="flex items-center gap-4 mb-6">
-            <Instagram size={24} className="text-primary-400" />
-            <h3 className="text-white font-semibold uppercase tracking-wider text-sm">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-4 mb-4 md:mb-6">
+            <Instagram size={20} className="text-primary-400 sm:w-6 sm:h-6" />
+            <h3 className="text-white font-semibold uppercase tracking-wider text-xs sm:text-sm">
               Follow Our Journey
             </h3>
-            <div className="h-px flex-1 bg-gradient-to-r from-stone-700 to-transparent"></div>
+            <div className="h-px flex-1 bg-gradient-to-r from-stone-700 to-transparent min-w-[60px]"></div>
             <a
               href="https://instagram.com/mimibeautyclinics"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary-400 hover:text-primary-300 text-sm font-medium"
+              className="text-primary-400 hover:text-primary-300 text-xs sm:text-sm font-medium min-h-[44px] min-w-[44px] flex items-center touch-manipulation"
             >
               @mimibeautyclinics
             </a>
@@ -91,7 +91,7 @@ export function Footer() {
         </motion.div>
 
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-16">
           {/* Information */}
           <div>
             <h3 className="font-bold text-white mb-6 uppercase tracking-wide text-sm">
@@ -232,7 +232,7 @@ export function Footer() {
               onClick={() =>
                 window.open("https://www.vagaro.com/mimibeautyclinics", "_blank")
               }
-              className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl"
+              className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 sm:px-8 sm:py-3 rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl min-h-[56px] touch-manipulation text-sm sm:text-base"
             >
               GET $100 OFF
             </motion.button>
