@@ -14,6 +14,8 @@ export function LeadCapturePopup() {
   });
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    
     // Show popup after 3 seconds if not dismissed before
     const timer = setTimeout(() => {
       const dismissed = localStorage.getItem("leadPopupDismissed");
@@ -27,7 +29,9 @@ export function LeadCapturePopup() {
 
   const handleClose = () => {
     setIsOpen(false);
-    localStorage.setItem("leadPopupDismissed", "true");
+    if (typeof window !== "undefined") {
+      localStorage.setItem("leadPopupDismissed", "true");
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
