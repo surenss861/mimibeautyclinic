@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import { ClientLayout } from "@/components/ClientLayout";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -92,10 +91,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body>
-        <ClientLayout>{children}</ClientLayout>
+      <body className="bg-champagne-50">
+        {children}
       </body>
     </html>
   );
 }
-
