@@ -1,23 +1,10 @@
-import { Hero } from "@/components/Hero";
-import { ValueProposition } from "@/components/ValueProposition";
-import { ServicesGrid } from "@/components/ServicesGrid";
-import { BeforeAfterSection } from "@/components/BeforeAfterSection";
-import { TestimonialsSection } from "@/components/TestimonialsSection";
-import { TeamCredentials } from "@/components/TeamCredentials";
-import { OffersSection } from "@/components/OffersSection";
-import { BookingCTA } from "@/components/BookingCTA";
-
 export default function Home() {
   return (
-    <>
-      <Hero />
-      <ValueProposition />
-      <ServicesGrid />
-      <BeforeAfterSection />
-      <TestimonialsSection />
-      <OffersSection />
-      <TeamCredentials />
-      <BookingCTA />
-    </>
+    <div className="min-h-screen bg-champagne-50 flex items-center justify-center">
+      <div className="text-center">
+        <h1 className="text-6xl font-bold text-stone-900 mb-4">Mimi Beauty Clinics</h1>
+        <p className="text-xl text-stone-600">Test Page - If you see this, routing works!</p>
+      </div>
+    </div>
   );
 }
