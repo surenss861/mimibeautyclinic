@@ -15,24 +15,24 @@ const serviceGroups = [
         title: "Anti-Wrinkle Injections",
         subtitle: "Botox® & Dysport®",
         tagline: "Smooth lines. Natural results.",
-        description: "The secret? Precision. We don&apos;t freeze faces—we soften expressions. Our injectors read your face like a map, placing each unit exactly where it needs to be. The result? You look like you, just well-rested.",
+        description: "The secret? Precision. We don't freeze faces—we soften expressions. Our injectors read your face like a map, placing each unit exactly where it needs to be. The result? You look like you, just well-rested.",
         price: "Starting at $110",
         duration: "15-min treatment",
         href: "/services/botox",
         image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=80",
-        testimonial: "I feel 10 years younger, and no one can tell I&apos;ve had anything done. That&apos;s the magic. – Dana",
+        testimonial: "\"I feel 10 years younger, and no one can tell I've had anything done. That's the magic.\" – Dana",
         benefit: "Look refreshed, not frozen",
       },
       {
         title: "Dermal Fillers",
         subtitle: "Juvéderm® & Restylane®",
         tagline: "Restore volume. Enhance features.",
-        description: "Think of fillers as your face&apos;s best-kept secret. We restore what time has gently taken away, enhancing your natural architecture with an artist&apos;s eye. Every placement is intentional, every result is you—just elevated.",
+        description: "Think of fillers as your face's best-kept secret. We restore what time has gently taken away, enhancing your natural architecture with an artist's eye. Every placement is intentional, every result is you—just elevated.",
         price: "Custom pricing",
         duration: "30-min treatment",
         href: "/services/fillers",
         image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80",
-        testimonial: "My lips look so natural, everyone thinks I was born with them. That&apos;s exactly what I wanted. – Sarah",
+        testimonial: "\"My lips look so natural, everyone thinks I was born with them. That's exactly what I wanted.\" – Sarah",
         benefit: "Natural enhancement, zero tell",
       },
     ],
@@ -45,25 +45,25 @@ const serviceGroups = [
         title: "Morpheus8",
         subtitle: "RF Microneedling",
         tagline: "Tighten skin. Transform texture.",
-        description: "This is where science meets art. Morpheus8 doesn&apos;t just treat the surface—it rebuilds from within. Radiofrequency energy meets precision needles to trigger your skin&apos;s natural healing response. The result? Skin that feels firmer, looks smoother, and glows with confidence.",
+        description: "This is where science meets art. Morpheus8 doesn't just treat the surface—it rebuilds from within. Radiofrequency energy meets precision needles to trigger your skin's natural healing response. The result? Skin that feels firmer, looks smoother, and glows with confidence.",
         price: "From $599",
         duration: "60-min treatment",
         href: "/services/morpheus8",
         image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&q=80",
-        testimonial: "My skin feels 10 years younger. People keep asking what I&apos;m doing differently. – Dana",
+        testimonial: "\"My skin feels 10 years younger. People keep asking what I'm doing differently.\" – Dana",
         benefit: "Firmer, smoother, glowing skin",
       },
       {
         title: "PRP & Microneedling",
         subtitle: "Collagen Induction",
         tagline: "Stimulate. Rejuvenate. Glow.",
-        description: "Your body already knows how to heal. We just give it a nudge. Using your own platelet-rich plasma, we stimulate your skin&apos;s natural collagen production. It&apos;s like hitting the reset button on your complexion—radiant, refreshed, and unmistakably yours.",
+        description: "Your body already knows how to heal. We just give it a nudge. Using your own platelet-rich plasma, we stimulate your skin's natural collagen production. It's like hitting the reset button on your complexion—radiant, refreshed, and unmistakably yours.",
         price: "From $299",
         duration: "45-min treatment",
         href: "/services/microneedling",
         image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800&q=80",
-        testimonial: "My skin has never looked this good. It&apos;s like I&apos;ve found my glow again. – Maria",
-        benefit: "Your body&apos;s natural healing, amplified",
+        testimonial: "\"My skin has never looked this good. It's like I've found my glow again.\" – Maria",
+        benefit: "Your body's natural healing, amplified",
       },
     ],
   },
@@ -165,7 +165,7 @@ function ServiceCard({ service, idx, groupIdx }: { service: any; idx: number; gr
           >
             <div className="absolute top-0 right-0 w-16 h-16 bg-primary-200/20 rounded-full blur-2xl -mr-8 -mt-8"></div>
             <p className="text-sm sm:text-base text-stone-700 italic relative z-10 leading-relaxed">
-              &ldquo;{service.testimonial}&rdquo;
+              {service.testimonial}
             </p>
           </motion.div>
           
