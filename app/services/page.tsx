@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { ClientLayout } from "@/components/ClientLayout";
 
 export const metadata: Metadata = {
   title: "Services | Mimi Beauty Clinics - Toronto",
@@ -48,43 +49,45 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen pt-20">
-      <section className="py-20 bg-champagne-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold text-gray-900 mb-4 font-serif">
-              Our Services
-            </h1>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Comprehensive aesthetic treatments tailored to your unique needs
-            </p>
-          </div>
+    <ClientLayout>
+      <div className="min-h-screen pt-20">
+        <section className="py-20 bg-champagne-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h1 className="text-5xl font-bold text-gray-900 mb-4 font-serif">
+                Our Services
+              </h1>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                Comprehensive aesthetic treatments tailored to your unique needs
+              </p>
+            </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, idx) => (
-              <Link key={idx} href={service.href}>
-                <div className="bg-champagne-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow group border border-stone-200/50">
-                  <div className="relative h-64">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map((service, idx) => (
+                <Link key={idx} href={service.href}>
+                  <div className="bg-champagne-50 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow group border border-stone-200/50">
+                    <div className="relative h-64">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h2 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
+                        {service.title}
+                      </h2>
+                      <p className="text-gray-600">{service.description}</p>
+                    </div>
                   </div>
-                  <div className="p-6">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
-                      {service.title}
-                    </h2>
-                    <p className="text-gray-600">{service.description}</p>
-                  </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </ClientLayout>
   );
 }
 

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle, Clock, DollarSign } from "lucide-react";
 import { BookButton } from "@/components/BookButton";
+import { ClientLayout } from "@/components/ClientLayout";
 
 export const metadata: Metadata = {
   title: "Anti-Wrinkle Injections (Botox) in Toronto | Mimi Beauty Clinics",
@@ -44,7 +45,8 @@ const faqs = [
 
 export default function BotoxPage() {
   return (
-    <div className="min-h-screen pt-20">
+    <ClientLayout>
+      <div className="min-h-screen pt-20">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-primary-50 to-champagne-50">
         <div className="container mx-auto px-4">
@@ -176,7 +178,8 @@ export default function BotoxPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </ClientLayout>
   );
 }
 

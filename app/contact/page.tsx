@@ -2,10 +2,12 @@
 
 import { Phone, Mail, MapPin } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
+import { ClientLayout } from "@/components/ClientLayout";
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen pt-20">
+    <ClientLayout>
+      <div className="min-h-screen pt-20">
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -109,7 +111,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </ClientLayout>
   );
 }
 

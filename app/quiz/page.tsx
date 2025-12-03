@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ClientLayout } from "@/components/ClientLayout";
 
 const questions = [
   {
@@ -87,7 +88,8 @@ export default function QuizPage() {
   if (completed) {
     const recommendation = getRecommendation();
     return (
-      <div className="min-h-screen pt-20 bg-gradient-to-br from-primary-50 to-white">
+      <ClientLayout>
+        <div className="min-h-screen pt-20 bg-gradient-to-br from-primary-50 to-white">
         <div className="container mx-auto px-4 py-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -126,12 +128,14 @@ export default function QuizPage() {
             </div>
           </motion.div>
         </div>
-      </div>
+        </div>
+      </ClientLayout>
     );
   }
 
   return (
-    <div className="min-h-screen pt-20 bg-gradient-to-br from-primary-50 to-white">
+    <ClientLayout>
+      <div className="min-h-screen pt-20 bg-gradient-to-br from-primary-50 to-white">
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
@@ -190,7 +194,8 @@ export default function QuizPage() {
           </AnimatePresence>
         </div>
       </div>
-    </div>
-  );
-}
+      </div>
+    </ClientLayout>
+    );
+  }
 

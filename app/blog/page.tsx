@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { Calendar } from "lucide-react";
+import { ClientLayout } from "@/components/ClientLayout";
 
 export const metadata: Metadata = {
   title: "Blog | Mimi Beauty Clinics - Beauty Tips & Insights",
@@ -43,7 +44,8 @@ const blogPosts = [
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen pt-20">
+    <ClientLayout>
+      <div className="min-h-screen pt-20">
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -91,7 +93,8 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </ClientLayout>
   );
 }
 

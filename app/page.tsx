@@ -1,10 +1,26 @@
+import { Hero } from "@/components/Hero";
+import { ValueProposition } from "@/components/ValueProposition";
+import { ServicesGrid } from "@/components/ServicesGrid";
+import { AboutSection } from "@/components/AboutSection";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { TrustSignals } from "@/components/TrustSignals";
+import { OffersSection } from "@/components/OffersSection";
+import { FinancingSection } from "@/components/FinancingSection";
+import { BookingCTA } from "@/components/BookingCTA";
+import { ClientLayout } from "@/components/ClientLayout";
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-champagne-50 flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-6xl font-bold text-stone-900 mb-4">Mimi Beauty Clinics</h1>
-        <p className="text-xl text-stone-600">Test Page - If you see this, routing works!</p>
-      </div>
-    </div>
+    <ClientLayout>
+      <Hero />
+      <ValueProposition />
+      <ServicesGrid />
+      <AboutSection />
+      <TestimonialsSection />
+      <TrustSignals />
+      <OffersSection />
+      <FinancingSection />
+      <BookingCTA />
+    </ClientLayout>
   );
 }
