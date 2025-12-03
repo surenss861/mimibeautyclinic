@@ -1,5 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
-Sitemap: https://mimibeautyclinics.com/sitemap.xml
+# Host
+Host: https://mimibeautyclinics.com
 
+# Sitemaps
+Sitemap: https://mimibeautyclinics.com/sitemap.xml

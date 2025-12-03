@@ -8,6 +8,8 @@ export function StickyBookingCTA() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    
     const handleScroll = () => {
       setIsVisible(window.scrollY > 300);
     };
