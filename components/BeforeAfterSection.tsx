@@ -43,7 +43,8 @@ export function BeforeAfterSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end start"],
+    layoutEffect: false,
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [40, -40]);

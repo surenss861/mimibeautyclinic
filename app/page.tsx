@@ -7,8 +7,6 @@ import { TeamCredentials } from "@/components/TeamCredentials";
 import { OffersSection } from "@/components/OffersSection";
 import { BookingCTA } from "@/components/BookingCTA";
 
-export const dynamic = "force-dynamic";
-
 export default function Home() {
   return (
     <>
